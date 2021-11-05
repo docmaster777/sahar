@@ -2,16 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\Customer;
-use common\models\CustomerSearch;
+use common\models\Master;
+use common\models\MasterSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CustomerController implements the CRUD actions for Customer model.
+ * MasterController implements the CRUD actions for Master model.
  */
-class CustomerController extends Controller
+class MasterController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class CustomerController extends Controller
     }
 
     /**
-     * Lists all Customer models.
+     * Lists all Master models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CustomerSearch();
+        $searchModel = new MasterSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Displays a single Customer model.
+     * Displays a single Master model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,13 +60,13 @@ class CustomerController extends Controller
     }
 
     /**
-     * Creates a new Customer model.
+     * Creates a new Master model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Customer();
+        $model = new Master();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,7 +82,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Updates an existing Customer model.
+     * Updates an existing Master model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -102,7 +102,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Deletes an existing Customer model.
+     * Deletes an existing Master model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -116,15 +116,15 @@ class CustomerController extends Controller
     }
 
     /**
-     * Finds the Customer model based on its primary key value.
+     * Finds the Master model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Customer the loaded model
+     * @return Master the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Customer::findOne($id)) !== null) {
+        if (($model = Master::findOne($id)) !== null) {
             return $model;
         }
 

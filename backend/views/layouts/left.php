@@ -31,7 +31,10 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Клиенты', 'icon' => 'file-code-o', 'url' => ['/customer'],],
+                    ['label' => 'Заказы', 'icon' => 'file-code-o', 'url' => ['/customer'],],
+                    ['label' => 'Заказы', 'icon' => 'file-code-o', 'url' => ['/customer'],],
+                    ['label' => 'Услуги', 'icon' => 'file-code-o', 'url' => ['/service'],],
+                    ['label' => 'Мастера', 'icon' => 'file-code-o', 'url' => ['/master'],],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],

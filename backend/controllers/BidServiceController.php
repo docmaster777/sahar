@@ -2,16 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\Customer;
-use common\models\CustomerSearch;
+use common\models\BidService;
+use common\models\BidServiceSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CustomerController implements the CRUD actions for Customer model.
+ * BidServiceController implements the CRUD actions for BidService model.
  */
-class CustomerController extends Controller
+class BidServiceController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,12 +32,12 @@ class CustomerController extends Controller
     }
 
     /**
-     * Lists all Customer models.
+     * Lists all BidService models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CustomerSearch();
+        $searchModel = new BidServiceSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +47,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Displays a single Customer model.
+     * Displays a single BidService model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,13 +60,13 @@ class CustomerController extends Controller
     }
 
     /**
-     * Creates a new Customer model.
+     * Creates a new BidService model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Customer();
+        $model = new BidService();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,7 +82,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Updates an existing Customer model.
+     * Updates an existing BidService model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -102,7 +102,7 @@ class CustomerController extends Controller
     }
 
     /**
-     * Deletes an existing Customer model.
+     * Deletes an existing BidService model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -116,15 +116,15 @@ class CustomerController extends Controller
     }
 
     /**
-     * Finds the Customer model based on its primary key value.
+     * Finds the BidService model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Customer the loaded model
+     * @return BidService the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Customer::findOne($id)) !== null) {
+        if (($model = BidService::findOne($id)) !== null) {
             return $model;
         }
 

@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\CustomerSearch */
+/* @var $searchModel common\models\ServiceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Клиенты';
+$this->title = 'Services';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="customer-index">
+<div class="service-index">
 
-<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
+    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Добавить клиента', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Service', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -28,10 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'surname',
+            'parent_id',
             'name',
-            'patronymic',
-            'phone',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
